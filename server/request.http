@@ -1,3 +1,6 @@
+GET http://localhost:5000/
+###
+//register
 POST http://localhost:5000/api/auth/register
 Content-Type: application/json
 
@@ -7,6 +10,7 @@ Content-Type: application/json
 }
 
 ###
+//Login
 POST http://localhost:5000/api/auth/login
 Content-Type: application/json
 
@@ -14,3 +18,39 @@ Content-Type: application/json
     "username": "vietkieubui",
     "password": "111111"
 }
+
+###
+//Create post
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjhiMTQwYTc5MjhkMzg2Y2ZhOWVlMjkiLCJpYXQiOjE2NTM0NTM3OTd9.kavKNjcDxO_XSpI547yi2z5OYDtyySaOpfsx1laJYVM
+
+{
+    "title": "My 2",
+    "description": "abc",
+    "url": "youtube.com",
+    "status": "" 
+}
+
+###
+//read post
+GET http://localhost:5000/api/posts
+Authorization: Beaerier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjhiMTQwYTc5MjhkMzg2Y2ZhOWVlMjkiLCJpYXQiOjE2NTM2NDk4MTd9.3pW-xw-NPRDLlYG745GAJRlR3USRIqDTKyWNoIncSPY
+
+###
+//Update Posts
+PUT http://localhost:5000/api/posts/6290b41e8e5c1854b0d3e559
+Content-Type: application/json
+Authorization: Beaerier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjhiMTQwYTc5MjhkMzg2Y2ZhOWVlMjkiLCJpYXQiOjE2NTM2NDk4MTd9.3pW-xw-NPRDLlYG745GAJRlR3USRIqDTKyWNoIncSPY
+
+{
+    "title": "my updated 1",
+    "description":"da update",
+    "url": "https://facebook.com",
+    "status": "LEARNING"
+}
+
+###
+//Delete Post
+DELETE  http://localhost:5000/api/posts/6290b41e8e5c1854b0d3e559
+Authorization: Beaerier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjhiMTQwYTc5MjhkMzg2Y2ZhOWVlMjkiLCJpYXQiOjE2NTM2NDk4MTd9.3pW-xw-NPRDLlYG745GAJRlR3USRIqDTKyWNoIncSPY
