@@ -3,6 +3,26 @@ const argon2 = require("argon2");
 const router = express.Router();
 const jwt = require("jsonwebtoken");
 const User = require("./../models/User");
+const verifyToken = require("../middleware/auth");
+
+/**
+ * @route GET api/auth/
+ * @description check if user is loggedin
+ * @access Public
+ */
+router.get("/", verifyToken, async (req, res) => {
+  try {
+    const user = await User.findById(req.userId).select("-password");
+    if (!user)
+      return res
+        .status(400)
+        .json({ success: false, message: "User not found" });
+    res.json({ success: true, user });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ success: false, message: "Internal server error!" });
+  }
+});
 
 /**
  * @route POST api/auth/register
@@ -69,14 +89,14 @@ router.post("/login", async (req, res) => {
     if (!user) {
       return res
         .status(400)
-        .json({ success: false, message: "Incorrect username or password!" });
+        .json({ success: false, message: "Incorrect Username or password!" });
     }
     //user found
     const passwordValid = await argon2.verify(user.password, password);
     if (!passwordValid) {
       return res
         .status(400)
-        .json({ success: false, message: "Incorrect username or password!" });
+        .json({ success: false, message: "Incorrect Username or password!" });
     }
     //All good
     //return Token

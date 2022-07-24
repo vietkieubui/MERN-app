@@ -26,9 +26,9 @@ Content-Type: application/json
 Authorization: Bearier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjhiMTQwYTc5MjhkMzg2Y2ZhOWVlMjkiLCJpYXQiOjE2NTM0NTM3OTd9.kavKNjcDxO_XSpI547yi2z5OYDtyySaOpfsx1laJYVM
 
 {
-    "title": "My 2",
+    "title": "My 3",
     "description": "abc",
-    "url": "youtube.com",
+    "url": "facebook.com",
     "status": "" 
 }
 
@@ -39,7 +39,7 @@ Authorization: Beaerier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2Mjh
 
 ###
 //Update Posts
-PUT http://localhost:5000/api/posts/6290b41e8e5c1854b0d3e559
+PUT http://localhost:5000/api/posts/62dcb00e7ec41fd554b07a48
 Content-Type: application/json
 Authorization: Beaerier eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MjhiMTQwYTc5MjhkMzg2Y2ZhOWVlMjkiLCJpYXQiOjE2NTM2NDk4MTd9.3pW-xw-NPRDLlYG745GAJRlR3USRIqDTKyWNoIncSPY
 
