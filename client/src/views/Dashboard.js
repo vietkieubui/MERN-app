@@ -28,8 +28,6 @@ export default function Dashboard() {
     setShowAddPostModal,
     showToast: { show, message, type },
     setShowToast,
-    showUpdatePostModal,
-    setShowUpdatePostModal,
   } = useContext(PostContext);
 
   //Start: get all posts
