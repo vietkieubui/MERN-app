@@ -22,7 +22,7 @@ export default function ProtectedRoute({ element: Component, ...rest }) {
       <NavbarMenu />
       <Routes>
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="about" element={<About />} />
+        <Route path="/about" element={<About />} />
         <Route path="/*" element={<Dashboard />} />
       </Routes>
     </>
